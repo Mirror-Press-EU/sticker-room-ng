@@ -1,1 +1,61 @@
-<p>r-sidebar works!</p>
+<a routerLink="/overview">Home</a>
+ || 
+<a routerLink="/room">Wall</a>
+
+<mat-tab-group [color]="'primary'" [backgroundColor]="'primary'">
+
+  <mat-tab label="Details">
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">info</mat-icon>
+      <!-- Details -->
+    </ng-template>
+
+    <mat-grid-list cols="4">
+
+      <mat-grid-tile colspan="1" colspan="1" #detail_cover>
+
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-tab>
+
+  <mat-tab label="Conversations">
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">chat_bubble_outline</mat-icon>
+      <!-- Chat -->
+    </ng-template>
+
+    <app-chat-display></app-chat-display>
+  </mat-tab>
+
+  <mat-tab label="History">
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">youtube_searched_for</mat-icon>
+      <!-- History -->
+    </ng-template>
+
+    <!--app-sticker-room-history></app-sticker-room-history-->
+    <mat-list>
+      <div mat-subheader>Today</div>
+
+      <mat-list-item>
+        <mat-icon mat-list-icon>account_circle</mat-icon>
+        <mat-icon mat-list-icon>post_add</mat-icon>
+
+        <div mat-line>Pin created</div>
+        <div mat-line>"Pin - Title"</div>
+      </mat-list-item>
+
+      <!--mat-divider></mat-divider-->
+      <div mat-subheader>Yesterday</div>
+
+      <mat-list-item>
+        <mat-icon mat-list-icon>account_circle</mat-icon>
+        <mat-icon mat-list-icon>control_camera</mat-icon>
+        
+        <div mat-line>Pin moved</div>
+        <div mat-line>"Pin - Title"</div>
+      </mat-list-item>
+    </mat-list>
+  </mat-tab>
+
+</mat-tab-group>

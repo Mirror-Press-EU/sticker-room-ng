@@ -1,0 +1,19 @@
+<mat-drawer-container id="sidebar" [hasBackdrop]="false">
+
+  <mat-drawer #drawer class="custom-app-sidebar">
+    <button mat-fab color="primary" [class]="drawer.open? 'isOpen': ''"
+      id="open-sidebar" (click)="drawer.toggle( )"
+      aria-label="Show details"
+    >
+      <mat-icon>menu_open</mat-icon>
+    </button>
+
+    <app-r-sidebar>
+    </app-r-sidebar>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <app-r-wall></app-r-wall>
+  </mat-drawer-content>
+
+</mat-drawer-container>

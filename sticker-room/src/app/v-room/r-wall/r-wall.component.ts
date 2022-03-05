@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./r-wall.component.scss']
 })
 export class RWallComponent implements OnInit {
+  createToolboxVisible:boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  openCreateQouteDialog( ) : void {
+
+  }
+
+  tgglCreateToolboxVisible( ) : void {
+
   }
 
 }

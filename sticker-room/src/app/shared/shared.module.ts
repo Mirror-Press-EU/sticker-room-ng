@@ -1,12 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ChatDisplayComponent } from './chat-display/chat-display.component';
+import { MaterialModule } from '../material/material.module';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ChatDisplayComponent,
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    MaterialModule,
+  ],
+  exports: [
+    ChatDisplayComponent
   ]
 })
 export class SharedModule { }
