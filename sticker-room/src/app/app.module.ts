@@ -9,6 +9,7 @@ import { MaterialModule } from './material/material.module';
 import { SharedModule } from './shared/shared.module';
 import { VRoomModule } from './v-room/v-room.module';
 import { VOverviewModule } from './v-overview/v-overview.module';
+import { StickerWallModule } from './sticker-wall/sticker-wall.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { VOverviewModule } from './v-overview/v-overview.module';
 
     // Views
     VRoomModule,
-    VOverviewModule
+    VOverviewModule,
+    StickerWallModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
