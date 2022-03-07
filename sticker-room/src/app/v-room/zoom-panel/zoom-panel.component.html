@@ -1,0 +1,21 @@
+<div
+  class="costum-zoom-bar" [class]="open? 'is-open': ''"
+>
+
+  <div class="costum-zoom-bar--container">
+    <mat-slider
+      thumbLabel
+      [displayWith]="formatLabel"
+      tickInterval="5"
+      step="5" min="25" max="175"
+      aria-label="units"
+    ></mat-slider>
+  </div>
+
+  <button mat-stroked-button
+    color="primary" class="costum-zoom-bar--button"
+    id="ui-zoom-bar--button" #ui_zoom_bar__button
+    (click)="toggleVisible( )"
+  >{{ scale }}%</button>
+
+</div>

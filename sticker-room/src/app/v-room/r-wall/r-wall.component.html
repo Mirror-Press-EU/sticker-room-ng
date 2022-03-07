@@ -30,9 +30,14 @@
 
   </div>
 </div>
+
 <button mat-fab color="primary"
-  id="open-utility-list" (click)="tgglCreateToolboxVisible( )"
-  class="overlay-button" aria-label="Create new Node"
+  id="open-utility-list" #OpenUtilityListBtn
+  (click)="tgglCreateToolboxVisible( )"
+  class="overlay-button" [class]="createToolboxVisible? 'is-open': ''"
+  ria-label="Create new Node"
 >
   <mat-icon>add</mat-icon>
 </button>
+
+<app-zoom-panel></app-zoom-panel>

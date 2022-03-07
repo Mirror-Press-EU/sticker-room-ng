@@ -1,0 +1,94 @@
+:host {
+
+  .costum-zoom-bar {
+    position: absolute;
+
+    display: flex;
+    top: -7rem;
+    right: 1.125rem;
+    width: 75vw;
+    max-width: 32rem;
+
+    padding: 2rem 1rem 0rem 1rem;
+    border: .137rem solid #6200ee;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, .87);
+
+    &,
+    .costum-zoom-bar--container,
+    .costum-zoom-bar--button,
+    .costum-zoom-bar--button * {
+      transition: all .5s cubic-bezier(0.4, 0, 1, 1);
+    }
+    
+    &.is-open {
+      top: 1.125rem;
+
+      .costum-zoom-bar--container {
+        opacity: 1;
+      }
+
+      .costum-zoom-bar--button.mdc-button.mdc-button--raised {
+        background: #6200ee;
+          
+        .costum-zoom-bar--b-text {
+          color: white;
+        }
+      } 
+    }
+
+    .costum-zoom-bar--container {
+      width: 100%;
+      opacity: 0;
+      
+      &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 2.5rem;
+        left: 50%;
+        bottom: 0;
+        width: 2px;
+        background: rgba(0, 0, 0, 0.125);
+        margin-left: -1px;
+        z-index: 9990;
+      }
+      &:after {
+        content: "100%";
+        position: absolute;
+        top: 0.75rem;
+        font-weight: 100;
+        color: rgba(0, 0, 0, 0.5);
+        left: 50%;
+        width: 4rem;
+        margin-left: -1.66rem;
+        text-align: center;
+        z-index: 9990;
+      }
+
+      .mat-slider {
+        width: 100%;
+      }
+    }
+
+    .costum-zoom-bar--button {
+      position: absolute;
+      right: .25rem;
+      top: calc(100% + 1.25rem);
+      width: 8rem;
+
+      font-size: 1.875rem;
+      line-height: 1.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.5rem;
+      border: 0.137rem solid #6200ee;
+      border-radius: 1rem;
+      background: rgba(255, 255, 255, 0.66);
+
+      margin: 2rem 0 0 0;
+      overflow: hidden;
+
+      .costum-zoom-bar--b-text { }
+    }
+  }
+}

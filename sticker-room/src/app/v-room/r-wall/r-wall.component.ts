@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { OnInit, Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-r-wall',
@@ -6,9 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./r-wall.component.scss']
 })
 export class RWallComponent implements OnInit {
+  //@ViewChild('OpenUtilityListBtn') openUtilityListBtn!: ElementRef;
+
   createToolboxVisible:boolean = false;
 
-  constructor() { }
+  constructor( ) { }
 
   ngOnInit(): void {
   }
@@ -18,7 +20,7 @@ export class RWallComponent implements OnInit {
   }
 
   tgglCreateToolboxVisible( ) : void {
-
+    this.createToolboxVisible = !this.createToolboxVisible;
   }
 
 }

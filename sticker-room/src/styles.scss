@@ -1,4 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  
+  overflow: hidden;
+  background: #c7c7c7;
+}
+
+
+.mat-drawer-inner-container {
+  background: white;
+  border-radius: 0 1rem 1rem 0;
+  box-shadow: 0px 8px 10px -5px rgb(0 0 0 / 20%), 0px 16px 24px 2px rgb(0 0 0 / 14%), 0px 6px 30px 5px rgb(0 0 0 / 12%);
+}
+
+
+html body .overlay-button.mat-fab {
+  padding: 0;
+  min-width: 4rem;
+  min-height: 4rem;
+  border-radius: 50%;
+}
+
+/* @ToDo: Move to v-room/r-sidebar/...scss */
+html body app-root #sidebar.mat-drawer-container {
+  #open-sidebar {
+    position: absolute;
+    top: 0.5rem;
+    right: calc( -56px + -0.5rem);
+    box-shadow: unset;
+    border-radius: 50% 0 50% 0;
+    transition: all 1s ease;
+
+    .mat-button-wrapper {
+      transform: rotate(180deg);
+      transition: all 1s ease;
+      margin-left: -0.25rem;
+    }
+  }
+  &.mat-drawer-container-has-open #open-sidebar {
+    border-radius: 50%;
+
+    .mat-button-wrapper {
+      transform: rotate(0deg);
+      margin-left: 0rem;
+    }
+  }
+}
