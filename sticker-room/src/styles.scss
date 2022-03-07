@@ -48,4 +48,28 @@ html body app-root #sidebar.mat-drawer-container {
       margin-left: 0rem;
     }
   }
+
+  .mat-tab-label-container {
+    height: 56px;
+
+    .mat-tab-labels {
+      height: 100%;
+      align-items: center;
+    }
+  }
+}
+
+html body .mat-slider-horizontal .mat-slider-track-wrapper {
+  height: 4px;
+  
+  .mat-slider-track-fill {
+    height: 4px;
+
+    .mat-slider-thumb {
+      right: -15px;
+      bottom: -15px;
+      width: 30px;
+      height: 30px;
+    }
+  }
 }
