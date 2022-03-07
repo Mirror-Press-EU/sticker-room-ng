@@ -59,17 +59,32 @@ html body app-root #sidebar.mat-drawer-container {
   }
 }
 
-html body .mat-slider-horizontal .mat-slider-track-wrapper {
-  height: 4px;
-  
-  .mat-slider-track-fill {
-    height: 4px;
+html body .mat-slider-horizontal {
+  .mat-slider-thumb-label {
+    top: -48px;
+    right: -20px;
 
-    .mat-slider-thumb {
-      right: -15px;
-      bottom: -15px;
-      width: 30px;
-      height: 30px;
+    width: 40px;
+    height: 40px;
+
+    .mat-slider-thumb-label-text {
+      font-size: .825rem;
+      line-height: 2rem;
+    }
+  }
+  
+  .mat-slider-track-wrapper {
+    height: 4px;
+    
+    .mat-slider-track-fill {
+      height: 4px;
+
+      .mat-slider-thumb {
+        right: -15px;
+        bottom: -15px;
+        width: 30px;
+        height: 30px;
+      }
     }
   }
 }

@@ -3,12 +3,12 @@
 >
 
   <div class="costum-zoom-bar--container">
-    <mat-slider
+    <mat-slider #zoom_range
       thumbLabel color="primary"
       [displayWith]="formatLabel"
-      tickInterval="5"
-      step="5" min="25" max="175"
-      aria-label="units"
+      tickInterval="5" step="5" min="25" max="175"
+      (input)="triggerScaleValueChanged( zoom_range.value )"
+      aria-label="ViewScale"
     ></mat-slider>
   </div>
 

@@ -1,28 +1,42 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Output,
+  EventEmitter,
+  Component,
+  OnInit
+} from '@angular/core';
 
 @Component({
   selector: 'app-zoom-panel',
   templateUrl: './zoom-panel.component.html',
   styleUrls: ['./zoom-panel.component.scss']
 })
+
 export class ZoomPanelComponent implements OnInit {
+  @Output( ) changedScale = new EventEmitter< number >( );
+
+
   scale:number = 100;
   open:boolean = false;
 
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() : void {
   }
 
-  formatLabel(value: number) {
-    if (value >= 1000) {
-      return Math.round(value / 1000) + 'k';
-    }
-
-    return value;
+  formatLabel(value: number) : string {
+    return value + "%";
   }
 
-  toggleVisible( ) {
+  toggleVisible( ) : void {
     this.open = !this.open;
+  }
+
+  closeToolbox( ) : void {
+    this.open = false;
+  }
+
+  triggerScaleValueChanged( newScaleValue:number) : void {
+    this.changedScale.emit( newScaleValue );
   }
 }

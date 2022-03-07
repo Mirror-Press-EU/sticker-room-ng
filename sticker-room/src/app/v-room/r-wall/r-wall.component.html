@@ -1,4 +1,4 @@
-<div id="canvas-display"></div>
+<div id="canvas-display" #can_display></div>
 
 <button mat-fab color="primary" id="save-folder"
   class="overlay-button" aria-label="Save Stickerwall"
@@ -40,4 +40,6 @@
   <mat-icon>add</mat-icon>
 </button>
 
-<app-zoom-panel></app-zoom-panel>
+<app-zoom-panel #zoom_panel
+  (changedScale)="setWallFrameDisance( $event )"
+></app-zoom-panel>
