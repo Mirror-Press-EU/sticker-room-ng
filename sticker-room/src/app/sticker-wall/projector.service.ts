@@ -1,7 +1,7 @@
 import {
   Inject, Injectable,
   ElementRef, ViewChild,
-  Renderer2
+  Renderer2, RendererFactory2
 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
@@ -15,20 +15,20 @@ import Pin from 'src/assets/ts/stickerwall-js/libery/base/pin';
 })
 export class ProjectorService {
   //@ViewChild( 'can_display' ) canDisplayComp!: ElementRef;
-  private canDisplayComp:HTMLDivElement;
-  private wallMngr:StickerWallManager = new StickerWallManager( );
+  private canDisplayDiv:HTMLDivElement;
+  private wallMngr:StickerWallManager;
 
   constructor(
-    private elementRef: ElementRef,
     private renderer: Renderer2,
     @Inject(DOCUMENT) private document: Document
-  ) {
-    this.canDisplayComp = new HTMLDivElement( );
-    this.canDisplayComp.setAttribute( "id", "canvas-display" );
+  ) { }
+
+  declareDisplayContainer( divDom:HTMLDivElement ) : void {
+    this.canDisplayDiv = divDom;
   }
 
   prepairToStart( parentEl:any ) : void {
-    parentEl.append( this.canDisplayComp );
+    parentEl.append( this.canDisplayDiv );
   }
 
   loadFromJSON( ) : void { }
@@ -46,6 +46,22 @@ export class ProjectorService {
   }
 
   removeByID( nodeType:string, targetNodeID:string ) : void {
-    this.wallMngr.removeNodeById( nodeType, targetNodeID );
+    //this.wallMngr.removeNodeById( nodeType, targetNodeID );
+  }
+
+  initCanvasElement( ) : HTMLDivElement {
+    if (this.canDisplayDiv) console.log( "canvas-display: element is inited" );
+
+    this.canDisplayDiv = this.renderer.createElement('div');
+    this.canDisplayDiv.setAttribute( "id", "canvas-display" );
+
+    return this.canDisplayDiv;
+  }
+
+  getCanvasElement( ) : HTMLDivElement {
+    if (!this.canDisplayDiv)
+      this.initCanvasElement( );
+
+    return this.canDisplayDiv;
   }
 }
