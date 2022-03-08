@@ -27,7 +27,6 @@ export class DisplayerComponent implements AfterViewInit {
   //#region [COMP-METHODS]
   constructor( private stickerWallService:ProjectorService ) { }
 
-  ngAfterViewInit( ) : void {
-  }
+  ngAfterViewInit( ) : void { }
   //#endregion
 }
