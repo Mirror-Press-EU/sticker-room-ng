@@ -1,17 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PreviewComponent } from './preview/preview.component';
-import { WallComponent } from './wall/wall.component';
+import { DisplayerComponent } from './displayer/displayer.component';
 
 
 
 @NgModule({
   declarations: [
     PreviewComponent,
-    WallComponent
+    DisplayerComponent
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    PreviewComponent,
+    DisplayerComponent
   ]
 })
 export class StickerWallModule { }

@@ -6,19 +6,21 @@ import { RootComponent } from './root/root.component';
 import { MaterialModule } from '../material/material.module';
 import { SharedModule } from '../shared/shared.module';
 import { ZoomPanelComponent } from './zoom-panel/zoom-panel.component';
+import { StickerWallModule } from '../sticker-wall/sticker-wall.module';
 
 @NgModule({
   declarations: [
     RSidebarComponent,
     RWallComponent,
     RootComponent,
-    ZoomPanelComponent,
+    ZoomPanelComponent
   ],
   imports: [
     CommonModule,
 
     MaterialModule,
     SharedModule,
+    StickerWallModule
   ]
 })
 export class VRoomModule { }
