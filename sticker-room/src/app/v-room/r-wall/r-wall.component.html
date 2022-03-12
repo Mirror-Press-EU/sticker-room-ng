@@ -1,4 +1,6 @@
-<app-displayer></app-displayer>
+<app-displayer #can_displayer
+  [folder-id]="'test1'"
+></app-displayer>
 
 <button mat-fab color="primary" id="save-folder"
   class="overlay-button" aria-label="Save Stickerwall"
@@ -10,7 +12,29 @@
 <div id="utility-list" *ngIf="createToolboxVisible">
   <div class="custom--button-list">
 
-    <button class="mdc-button mdc-button--icon-leading"
+    <button mat-flat-button
+      id="dialog--mod-pin-qoute--open" (click)="openCreateQouteDialog( )"
+    >
+      <mat-icon>format_quote</mat-icon>
+      <span>Quote</span>
+    </button>
+
+    <button mat-flat-button
+      id="dialog--mod-pin-notice--open"
+    >
+      <mat-icon>assignment</mat-icon>
+      <span>Notice</span>
+    </button>
+
+
+    <button mat-flat-button
+      id="dialog--mod-pin-connection--open"
+    >
+      <mat-icon>share</mat-icon>
+      <span>Connect</span>
+    </button>
+
+    <!--button class="mdc-button mdc-button--icon-leading"
       id="dialog--mod-pin-qoute--open" (click)="openCreateQouteDialog( )"
     >
       <span class="mdc-button__ripple"></span>
@@ -26,7 +50,7 @@
       <span class="mdc-button__ripple"></span>
       <i class="material-icons mdc-button__icon" aria-hidden="true">share</i>
       <span class="mdc-button__label">Connect</span>
-    </button>
+    </button-->
 
   </div>
 </div>
