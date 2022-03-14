@@ -4,26 +4,26 @@ import Pin from 'src/assets/ts/stickerwall-js/libery/base/pin';
 import Attachment from 'src/assets/ts/stickerwall-js/libery/attachments/attachment';
 
 export class FullMemoryData {
-  private pins:Pin[];
+  private nodes:Pin[];
   private attachs:Attachment[];
 
   constructor( allPins:Pin[]=[], allAttachs:Attachment[] ) {
-    this.pins = allPins;
+    this.nodes = allPins;
     this.attachs = allAttachs;
   }
 
   isEmpty( ) : boolean {
-    return this.pins.length === 0
+    return this.nodes.length === 0
         && this.attachs.length === 0;
   }
 
-  getPins( ) : Pin[] { return this.pins; }
+  getPins( ) : Pin[] { return this.nodes; }
   getAttachs( ) : Attachment[] { return this.attachs; }
 
   getValideJSON( ) : string {
     return JSON.stringify( {
-      pins: this.pins,
-      attachs: this.attachs
+      nodes: this.nodes,
+      attachments: this.attachs
     } );
   }
 }
@@ -36,10 +36,10 @@ export class FullDataPipe implements PipeTransform {
   transform( folderContentJson: string ) : FullMemoryData {
     let jsonObj:any = JSON.parse( folderContentJson );
 
-    if (jsonObj.pins instanceof Array
+    if (jsonObj.nodes instanceof Array
     &&  jsonObj.attachs instanceof Array) {
       let resData:FullMemoryData = new FullMemoryData(
-        jsonObj.pins, jsonObj.attachs
+        jsonObj.nodes, jsonObj.attachs
       );
 
       if (!resData.isEmpty( )) return resData;

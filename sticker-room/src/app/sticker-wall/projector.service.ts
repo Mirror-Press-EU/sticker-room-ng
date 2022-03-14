@@ -20,7 +20,7 @@ export class ProjectorService {
   getInitData( folderID:string ): FullMemoryData {
     let dataPipe = new FullDataPipe( );
     return dataPipe.transform( JSON.stringify( {
-      pins: [{
+      nodes: [{
         id: "t1",
         type: "link-qoute",
         values: {
@@ -67,6 +67,7 @@ export class ProjectorService {
 
   loadFolder( folderID:string ) : void {
     let initData:FullMemoryData = this.getInitData( folderID );
+    debugger;
     
     this.wallMngr.loadFromJSON( initData.getValideJSON( ) );
   }
