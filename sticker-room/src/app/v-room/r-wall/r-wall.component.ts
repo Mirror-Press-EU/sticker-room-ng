@@ -4,6 +4,8 @@ import {
   ElementRef,
   ViewChild
 } from '@angular/core';
+import Attachment from 'src/assets/ts/stickerwall-js/libery/attachments/attachment';
+import Pin from 'src/assets/ts/stickerwall-js/libery/base/pin';
 
 @Component({
   selector: 'app-r-wall',
@@ -12,7 +14,7 @@ import {
 })
 
 export class RWallComponent implements AfterViewInit {
-  @ViewChild( 'can_display' ) canDisplayComp!: ElementRef;
+  @ViewChild( 'can_displayer' ) canDisplayComp!: ElementRef;
   @ViewChild( 'zoom_panel' ) zoomPanelComp!: any;
 
   createToolboxVisible:boolean = false;
@@ -41,5 +43,14 @@ export class RWallComponent implements AfterViewInit {
 
   setWallFrameDisance( evt ) : any {
     console.log( evt );
+  }
+
+
+  addPinNode( newPinNode:Pin ) : void {
+    //this.wallMngr.addPinNode( newPinNode );
+  }
+
+  addAttachment( newAttachNode:Attachment ) : void {
+    //this.wallMngr.addAttachment( newAttachNode );
   }
 }

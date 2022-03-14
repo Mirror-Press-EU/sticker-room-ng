@@ -1,0 +1,32 @@
+:host {
+  float: left;
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  #canvas-display {
+    position: relative;
+
+    width: 100%;
+    width: calc( 100% - 1.5rem );
+    height: 100%;
+    height: calc( 100% - 1.5rem );
+
+    border: 0.25rem dashed transparent;
+    border-radius: 1.75rem 1.75rem 3.5rem 1rem;
+
+    margin: 0.5rem;
+    background: white;
+    overflow: hidden;
+  }
+
+  /*#display-mode-cancle {
+    display: none;
+  }
+
+  &.custom-can-display--display-mode---open {
+    #canvas-display {
+      border-color: rgba(98, 0, 238, .5);
+    }
+  }*/
+}

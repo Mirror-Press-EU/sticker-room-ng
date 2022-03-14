@@ -88,3 +88,32 @@ html body .mat-slider-horizontal {
     }
   }
 }
+
+#canvas-display .konvajs-content {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: unset !important;
+  height: unset !important;
+}
+
+#utility-list {
+  .mat-button-wrapper {
+    width: calc( 100% - 2rem );
+    display: flex;
+
+    .mat-icon {
+      line-height: 4rem;
+      font-size: 2rem;
+      width: auto;
+      height: auto;
+      margin-right: 2rem;
+    }
+    
+    span {
+      line-height: 4rem;
+    }
+  }
+}
