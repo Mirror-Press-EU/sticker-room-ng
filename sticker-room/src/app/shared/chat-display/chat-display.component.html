@@ -1,12 +1,43 @@
-<mat-list>
-  <mat-list-item>
+<mat-list class="chat-room--content-wrapper">
+  <div mat-subheader
+    class="chat-room-item chat-room-item--date-row"
+  >Today</div>
+  
+  <mat-list-item class="chat-room-item"
+    *ngFor="let msg of convHistory"
+  >
     <!--img matListAvatar src="..." alt="..."-->
     <mat-icon mat-list-icon>account_circle</mat-icon>
 
-    <h3 matLine> von Nutzername: </h3>
-    <p matLine>
-      <span> YYYYYY </span>
-      <span class="demo-2"> -- ZZZZZZZZ </span>
-    </p>
+    <h3 matLine class="chat-room-item--from-display">von {{ msg.authorName }}:</h3>
+    <p matLine class="chat-room-item--content">{{ msg.text }}</p>
   </mat-list-item>
+
 </mat-list>
+
+<div class="chat-room--bottom-action-bar">
+  <mat-form-field class="chat-room--bab-input-field" appearance="fill">
+    <mat-label>Message to @ChannelName</mat-label>
+    <textarea matInput #msgTextBox
+      rows="1" placeholder="Press L-Ctrl for extras"
+      (keyup)="resizeTextBox( )"
+    ></textarea>
+  </mat-form-field>
+  <button mat-fab class="chat-room--bab-input-field" aria-label="Send"
+    (click)="onSendMessageBtnClicked( )"
+  >
+    <!--mat-icon>bookmark</mat-icon!-->
+    <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="WHITE"
+      style="transition: all 1s ease;"  
+      [style.transform]="'rotate('+ (txtInputEmpty ? '-90' : '0') +'deg)'"
+    >
+      <polygon points="15.5,5 11,5 16,12 11,19 15.5,19 20.5,12" style="transition: all 1s ease;"
+        [style.fill]="txtInputEmpty ? 'WHITE' : 'TRANSPARENT'"
+        [style.transform]="'translateX('+ (txtInputEmpty ? '0' : '4') +'px)'"
+      />
+      <polygon points="8.5,5 4,5 9,12 4,19 8.5,19 13.5,12" style="transition: all 1s ease;"
+        [style.transform]="'translateX('+ (txtInputEmpty ? '0' : '4') +'px)'"
+      />
+    </svg>
+  </button>
+</div>

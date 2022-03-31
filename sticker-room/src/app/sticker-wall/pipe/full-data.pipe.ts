@@ -26,6 +26,14 @@ export class FullMemoryData {
       attachments: this.attachs
     } );
   }
+
+  addNode( newNode:Pin ) {
+    this.nodes.push( newNode );
+  }
+
+  addAttach( newAttach:Attachment ) {
+    this.attachs.push( newAttach );
+  }
 }
 
 @Pipe({

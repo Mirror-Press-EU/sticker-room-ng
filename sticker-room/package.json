@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start:dev": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -20,8 +20,11 @@
     "@angular/platform-browser": "~13.2.0",
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
+    "@awesome-cordova-plugins/core": "^5.40.0",
+    "@ionic/angular": "^6.0.12",
     "@mirror-press-eu/stickerwall-js": "file:./src/assets/js/stickerwall-js/sticker-wall.ts",
     "konva": "^8.3.3",
+    "ngx-socket-io": "^4.2.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
