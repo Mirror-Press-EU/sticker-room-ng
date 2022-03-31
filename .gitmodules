@@ -1,0 +1,3 @@
+[submodule "sticker-room/src/assets/ts/stickerwall-js"]
+	path = sticker-room/src/assets/ts/stickerwall-js
+	url = https://github.com/Mirror-Press-EU/stickerwall-js.git
