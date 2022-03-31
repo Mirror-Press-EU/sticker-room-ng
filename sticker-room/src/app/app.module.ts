@@ -12,9 +12,7 @@ import { VOverviewModule } from './v-overview/v-overview.module';
 import { StickerWallModule } from './sticker-wall/sticker-wall.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [ AppComponent ],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -24,7 +24,7 @@ export class ProjectorService {
         id: "t1",
         type: "link-qoute",
         values: {
-          "x": 0, "y": 0,
+          "x": 100, "y": 100,
           "title": "t1",
           "text": "t11"
         }
@@ -67,7 +67,6 @@ export class ProjectorService {
 
   loadFolder( folderID:string ) : void {
     let initData:FullMemoryData = this.getInitData( folderID );
-    debugger;
     
     this.wallMngr.loadFromJSON( initData.getValideJSON( ) );
   }

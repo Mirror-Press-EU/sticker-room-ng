@@ -6,6 +6,7 @@ import {
 } from '@angular/core';
 import Attachment from 'src/assets/ts/stickerwall-js/libery/attachments/attachment';
 import Pin from 'src/assets/ts/stickerwall-js/libery/base/pin';
+import { QouteComponent } from '../modify-dialogs/qoute/qoute.component';
 
 @Component({
   selector: 'app-r-wall',
@@ -16,6 +17,7 @@ import Pin from 'src/assets/ts/stickerwall-js/libery/base/pin';
 export class RWallComponent implements AfterViewInit {
   @ViewChild( 'can_displayer' ) canDisplayComp!: ElementRef;
   @ViewChild( 'zoom_panel' ) zoomPanelComp!: any;
+  @ViewChild( QouteComponent ) qouteDialog:QouteComponent;
 
   createToolboxVisible:boolean = false;
 
@@ -30,7 +32,7 @@ export class RWallComponent implements AfterViewInit {
   }
 
   openCreateQouteDialog( ) : void {
-
+    this.qouteDialog.openDialog( );
   }
 
   tgglCreateToolboxVisible( ) : void {
